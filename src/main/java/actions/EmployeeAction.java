@@ -279,7 +279,6 @@ public class EmployeeAction extends ActionBase {
 
             forward(ForwardConst.FW_ERR_UNKNOWN);
             return false;
-
         } else {
 
             return true;
