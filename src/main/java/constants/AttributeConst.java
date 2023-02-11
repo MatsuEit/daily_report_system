@@ -48,7 +48,9 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content_msg");
+    REP_CONTENT("content_msg"),
+    REP_IN_TIME("in_time"),
+    REP_OUT_TIME("out_time");
 
     private final String text;
     private final Integer i;

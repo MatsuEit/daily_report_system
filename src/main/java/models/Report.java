@@ -2,6 +2,7 @@ package models;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -93,5 +94,17 @@ public class Report {
      */
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
+
+    /**
+     * 出勤時間
+     */
+    @Column(name = JpaConst.REP_COL_IN_TIME, nullable = false)
+    private LocalTime inTime;
+
+    /**
+     * 退勤時間
+     */
+    @Column(name = JpaConst.REP_COL_OUT_TIME, nullable = false)
+    private LocalTime outTime;
 
 }
