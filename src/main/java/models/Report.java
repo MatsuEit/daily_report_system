@@ -98,13 +98,13 @@ public class Report {
     /**
      * 出勤時間
      */
-    @Column(name = JpaConst.REP_COL_IN_TIME, nullable = false)
+    @Column(name = JpaConst.REP_COL_IN_TIME, nullable = true)
     private LocalTime inTime;
 
     /**
      * 退勤時間
      */
-    @Column(name = JpaConst.REP_COL_OUT_TIME, nullable = false)
+    @Column(name = JpaConst.REP_COL_OUT_TIME, nullable = true)
     private LocalTime outTime;
 
 }

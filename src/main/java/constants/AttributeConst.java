@@ -1,5 +1,9 @@
 package constants;
 
+import java.time.LocalTime;
+
+import javax.persistence.Column;
+
 /**
  * 画面の項目値等を定義するEnumクラス
  *
@@ -72,5 +76,11 @@ public enum AttributeConst {
     public Integer getIntegerValue() {
         return this.i;
     }
+    
+    /**
+     * 出勤時間
+     */
+    @Column(name = JpaConst.REP_COL_IN_TIME, nullable = false)
+    private LocalTime inTime;
 
 }

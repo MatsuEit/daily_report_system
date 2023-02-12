@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -193,10 +194,8 @@ public abstract class ActionBase {
      * @return 変換後LocalTimeインスタンス
      */
     protected LocalTime toLocalTime(String strTime) {
-        if (strTime == null || strTime.equals("")) {
-            return LocalTime.now();
-        }
-        return LocalTime.parse(strTime);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        return LocalTime.parse(strTime, formatter);
     }
 
     /**

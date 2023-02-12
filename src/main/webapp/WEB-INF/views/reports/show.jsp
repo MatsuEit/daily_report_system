@@ -41,9 +41,9 @@
                 <tr>
                     <th>退勤時間</th>
                     <fmt:parseDate value="${report.outTime}"
-                        pattern="HH:mm:ss" var="outTime" type="time" />
+                        pattern="HH:mm" var="outTime" type="time" />
                     <td><fmt:formatDate value='${outTime}'
-                            pattern='HH:mm:ss' /></td>
+                            pattern='HH:mm' /></td>
                 </tr>
                 <tr>
                     <th>登録日時</th>
