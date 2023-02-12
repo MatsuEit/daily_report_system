@@ -1,5 +1,6 @@
 package models.validators;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,17 +32,17 @@ public class ReportValidator {
             errors.add(contentError);
         }
 
-//        //出勤時間のチェック
-//        String inTimeError = validateInTime(rv.getInTime());
-//        if (!inTimeError.equals("")) {
-//            errors.add(inTimeError);
-//        }
-//
-//        //退勤時間のチェック
-//        String outTimeError = validateOutTime(rv.getOutTime());
-//        if (!outTimeError.equals("")) {
-//            errors.add(outTimeError);
-//        }
+        //出勤時間のチェック
+        String inTimeError = validateInTime(rv.getInTime());
+        if (inTimeError != null) {
+            errors.add(inTimeError);
+        }
+
+        //退勤時間のチェック
+        String outTimeError = validateOutTime(rv.getOutTime());
+        if (outTimeError != null) {
+            errors.add(outTimeError);
+        }
 
         return errors;
     }
@@ -74,31 +75,31 @@ public class ReportValidator {
         return "";
     }
 
-//    /**
-//     * 出勤時間に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
-//     * @param localTime 出勤時間
-//     * @return エラーメッセージ
-//     */
-//    private static String validateInTime(LocalTime localTime) {
-//        if (localTime == null) {
-//            return MessageConst.E_NOINTIME.getMessage();
-//        }
-//
-//        //入力値がある場合は空文字を返却
-//        return "";
-//    }
-//
-//    /**
-//     * 退勤時間に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
-//     * @param localTime 退勤時間
-//     * @return エラーメッセージ
-//     */
-//    private static String validateOutTime(LocalTime localTime) {
-//        if (localTime == null) {
-//            return MessageConst.E_NOOUTTIME.getMessage();
-//        }
-//
-//        //入力値がある場合は空文字を返却
-//        return "";
-//    }
+    /**
+     * 出勤時間に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param localTime 出勤時間
+     * @return エラーメッセージ
+     */
+    private static String validateInTime(LocalTime localTime) {
+        if (localTime == null) {
+            return MessageConst.E_NOINTIME.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return null;
+    }
+
+    /**
+     * 退勤時間に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param localTime 退勤時間
+     * @return エラーメッセージ
+     */
+    private static String validateOutTime(LocalTime localTime) {
+        if (localTime == null) {
+            return MessageConst.E_NOOUTTIME.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return null;
+    }
 }

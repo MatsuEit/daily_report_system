@@ -194,6 +194,9 @@ public abstract class ActionBase {
      * @return 変換後LocalTimeインスタンス
      */
     protected LocalTime toLocalTime(String strTime) {
+        if (strTime == null || strTime.equals("")) {
+            return null;
+        }
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         return LocalTime.parse(strTime, formatter);
     }

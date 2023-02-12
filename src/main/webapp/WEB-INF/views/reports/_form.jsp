@@ -24,16 +24,22 @@
 <br />
 <br />
 
+<fmt:parseDate value="${report.inTime}" pattern="HH:mm"
+    var="inTime" type="time" />
 <label for="${AttributeConst.REP_IN_TIME.getValue()}">出勤時間</label>
 <br />
 <input type="time" name="${AttributeConst.REP_IN_TIME.getValue()}"
-    id="${AttributeConst.REP_IN_TIME.getValue()}" pattern='HH:mm' value="${inTime}" />
+    id="${AttributeConst.REP_IN_TIME.getValue()}"
+    value="<fmt:formatDate value="${inTime}" pattern='HH:mm' />" />
 <br />
 
+<fmt:parseDate value="${report.outTime}" pattern="HH:mm"
+    var="outTime" type="time" />
 <label for="${AttributeConst.REP_OUT_TIME.getValue()}">退勤時間</label>
 <br />
 <input type="time" name="${AttributeConst.REP_OUT_TIME.getValue()}"
-    id="${AttributeConst.REP_OUT_TIME.getValue()}" pattern='HH:mm' value='${outTime}'  />
+    id="${AttributeConst.REP_OUT_TIME.getValue()}"
+    value="<fmt:formatDate value="${outTime}" pattern='HH:mm' />" />
 <br />
 <br />
 
